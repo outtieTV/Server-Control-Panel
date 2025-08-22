@@ -11,10 +11,10 @@ Features:<br />
 - theme by materialskin.2 https://www.nuget.org/packages/MaterialSkin.2
 <br />
 Instructions:<br />
-- install Visual Studio 2022 with C# packages
-- open .sln file
-- open nuget package manager and type `dotnet add package MaterialSkin.2 --version 2.3.1`
-- build and run the program with RELEASE : ANY CPU
+- install Visual Studio 2022 with C# packages<br />
+- open .sln file<br />
+- open nuget package manager and type `dotnet add package MaterialSkin.2 --version 2.3.1`<br />
+- build and run the program with RELEASE : ANY CPU<br />
 <br />
 <img width="1100" height="720" alt="image" src="https://github.com/user-attachments/assets/a8cb4d3b-ea9a-418e-9838-20a6f7c7cf03" />
 <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/3dbc5f67-97b2-442d-b5e3-f329964dab33" />
