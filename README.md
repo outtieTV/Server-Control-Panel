@@ -13,7 +13,7 @@ Features:<br />
 Instructions:<br />
 1. install Visual Studio 2022 with C# packages
 2. open .sln file
-3. open nuget package manager and type: `dotnet add package MaterialSkin.2 --version 2.3.1`
+3. open nuget package manager and install materialskin.2
 4. build and run the program with RELEASE : ANY CPU
 <br />
 <img width="1100" height="720" alt="image" src="https://github.com/user-attachments/assets/a8cb4d3b-ea9a-418e-9838-20a6f7c7cf03" />
