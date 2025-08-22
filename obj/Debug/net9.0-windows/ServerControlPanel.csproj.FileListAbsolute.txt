@@ -1,0 +1,7 @@
+C:\Users\jacob\source\repos\ServerControlPanel\obj\Debug\net9.0-windows\ServerControlPanel.csproj.AssemblyReference.cache
+C:\Users\jacob\source\repos\ServerControlPanel\obj\Debug\net9.0-windows\ServerControlPanel.Form1.resources
+C:\Users\jacob\source\repos\ServerControlPanel\obj\Debug\net9.0-windows\ServerControlPanel.csproj.GenerateResource.cache
+C:\Users\jacob\source\repos\ServerControlPanel\obj\Debug\net9.0-windows\ServerControlPanel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jacob\source\repos\ServerControlPanel\obj\Debug\net9.0-windows\ServerControlPanel.AssemblyInfoInputs.cache
+C:\Users\jacob\source\repos\ServerControlPanel\obj\Debug\net9.0-windows\ServerControlPanel.AssemblyInfo.cs
+C:\Users\jacob\source\repos\ServerControlPanel\obj\Debug\net9.0-windows\ServerControlPanel.csproj.CoreCompileInputs.cache

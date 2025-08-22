@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "tQyu3ruyIX0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jacob\\source\\repos\\ServerControlPanel\\ServerControlPanel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jacob\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512",
+    "C:\\Users\\jacob\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.0\\system.diagnostics.eventlog.8.0.0.nupkg.sha512",
+    "C:\\Users\\jacob\\.nuget\\packages\\system.serviceprocess.servicecontroller\\8.0.0\\system.serviceprocess.servicecontroller.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
