@@ -19,7 +19,6 @@ Instructions:<br />
 <br />
 Known issues:<br />
 -executable full path sometimes doesn't show until you click around a bit<br />
--services sometimes don't start, but executables work. I think this is due to a permissions issue. I will fix it eventually.
 <img width="1100" height="720" alt="image" src="https://github.com/user-attachments/assets/a8cb4d3b-ea9a-418e-9838-20a6f7c7cf03" />
 <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/3dbc5f67-97b2-442d-b5e3-f329964dab33" />
 
