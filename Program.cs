@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.ServiceProcess;
+using System.Security.Principal;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Windows.Forms;
@@ -137,6 +138,15 @@ namespace ServerControlPanel
 
         }
 
+        private bool IsRunningAsAdministrator()
+        {
+            using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+            {
+                WindowsPrincipal principal = new WindowsPrincipal(identity);
+                return principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+        }
+
         private void BuildProfilesTab()
         {
             // Left panel (profiles list)
@@ -169,7 +179,6 @@ namespace ServerControlPanel
                 }
             };
         }
-
 
         private void BuildEditTab()
         {
@@ -409,8 +418,8 @@ namespace ServerControlPanel
                 if (lstSvcs.SelectedItem is ServiceItem sv)
                 {
                     txtSvcNick.Text = sv.Nickname;
-                    // Find and select the service in the ComboBox
-                    var service = cboServices.Items.Cast<ServiceController>().FirstOrDefault(s => s.ServiceName == sv.ServiceName);
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  // Find and select the service in the ComboBox
+Â  Â  Â  Â  Â  Â  Â  Â  Â  Â  var service = cboServices.Items.Cast<ServiceController>().FirstOrDefault(s => s.ServiceName == sv.ServiceName);
                     if (service != null)
                     {
                         cboServices.SelectedItem = service;
@@ -621,45 +630,45 @@ namespace ServerControlPanel
                 MessageBox.Show(exx.Message, "Stop EXE failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void StartService(string serviceName)
         {
             try
             {
-                // Use net start to match requirement
-                var psi = new ProcessStartInfo("cmd.exe", $"/c net start \"{serviceName}\"")
+                using (ServiceController sc = new ServiceController(serviceName))
                 {
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    WindowStyle = ProcessWindowStyle.Hidden,
-                    Verb = "runas"
-                };
-                Process.Start(psi);
+                    if (sc.Status == ServiceControllerStatus.Stopped || sc.Status == ServiceControllerStatus.Paused)
+                    {
+                        sc.Start();
+                        sc.WaitForStatus(ServiceControllerStatus.Running, TimeSpan.FromSeconds(30));
+                    }
+                }
             }
-            catch (Exception exx)
+            catch (Exception)
             {
-                MessageBox.Show(exx.Message, "Start Service failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please run this application as Administrator.", "Start Service failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void StopService(string serviceName)
         {
             try
             {
-                var psi = new ProcessStartInfo("cmd.exe", $"/c net stop \"{serviceName}\"")
+                using (ServiceController sc = new ServiceController(serviceName))
                 {
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    WindowStyle = ProcessWindowStyle.Hidden,
-                    Verb = "runas"
-                };
-                Process.Start(psi);
+                    if (sc.Status == ServiceControllerStatus.Running)
+                    {
+                        sc.Stop();
+                        sc.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(30));
+                    }
+                }
             }
-            catch (Exception exx)
+            catch (Exception)
             {
-                MessageBox.Show(exx.Message, "Stop Service failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please run this application as Administrator.", "Stop Service failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         // Persistence
         private void RegisterAppOnLogin(bool enable)
