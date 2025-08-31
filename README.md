@@ -15,7 +15,7 @@ Instructions:<br />
 2. open .sln file<br />
 3. open nuget package manager and install materialskin.2<br />
 Type:
-$ dotnet add package MaterialSkin.2 --version 2.3.1
+$ dotnet add package MaterialSkin.2 --version 2.3.1<br />
 4. build and run the program with RELEASE : ANY CPU<br />
 <br />
 Known issues:<br />
