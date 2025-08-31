@@ -14,8 +14,10 @@ Instructions:<br />
 1. install Visual Studio 2022 with C# packages<br />
 2. open .sln file<br />
 3. open nuget package manager and install materialskin.2<br />
-```dotnet add package MaterialSkin.2 --version 2.3.1```<br />
-4. build and run the program with RELEASE : ANY CPU<br />
+```
+dotnet add package MaterialSkin.2 --version 2.3.1
+```
+5. build and run the program with RELEASE : ANY CPU<br />
 <br />
 Known issues:<br />
 -executable full path sometimes doesn't show until you click around a bit. This is either due to RenderPanelLists or RenderMiddlePanel<br />
